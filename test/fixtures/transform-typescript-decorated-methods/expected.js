@@ -22,6 +22,13 @@ class Class1 {
     })();
   }
 
+  methodBound() {
+    return _flow(function* () {
+      yield 123;
+      yield 321;
+    })();
+  }
+
   method2() {
     class Class2 {
       method() {
@@ -56,6 +63,7 @@ class Class1 {
 }
 
 tslib_1.__decorate([mobx.action], Class1.prototype, "method", null);
+tslib_1.__decorate([mobx.action.bound], Class1.prototype, "methodBound", null);
 tslib_1.__decorate([action], Class1.prototype, "method1", void 0);
 export default class Class2 {
   method() {
@@ -64,5 +72,12 @@ export default class Class2 {
       yield 321;
     })();
   }
+  methodBound() {
+    return _flow(function* () {
+      yield 123;
+      yield 321;
+    })();
+  }
 }
 tslib_1.__decorate([action], Class2.prototype, "method", null);
+tslib_1.__decorate([action.bound], Class2.prototype, "methodBound", null);
